@@ -1,0 +1,31 @@
+
+
+
+.graph-mouse-position-modal {
+    position:absolute;
+    left: 20px;
+    //display:none;
+    opacity:0;
+    transition:opacity 0.3s ease-in-out;
+    width:200px;
+    border:1px solid black;
+     display:flex;
+     justify-content: center;
+     padding:10px;
+    &.visible {
+        opacity:1;
+    }
+
+    .mouse-coords {
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction:column;
+        color:gray;
+        span{
+            width:100px;
+            text-align:left;
+        }
+       
+    }
+}

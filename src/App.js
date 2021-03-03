@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState} from 'react';
 import './App.css';
+import Graph from './components/graph/Graph';
+import PlottingForm from './components/plotting-form/PlottingForm';
 
 function App() {
+  const [func,setFunc] = useState('');
+
+    const handleChange = (e) => {
+        const {value } = e.target;
+        setFunc(value);
+        
+    };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{paddingTop:"60px"}}>
+        <PlottingForm plot={func} handleChange={handleChange}  />
+        <Graph func={func} width={800} height={800} />
     </div>
   );
 }
